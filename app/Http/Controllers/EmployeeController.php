@@ -27,8 +27,6 @@ class EmployeeController extends Controller
      */
     public function store(EmployeeFileRequest $request)
     {
-        // dump(11);
-        // $validatedData = $request->validated();
         $file = $request->file('employees');
         $name = time() . '.' . $file->extension();
         $path = public_path() . '/files';

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\EmployeeFileRequest;
+use App\Jobs\ProcessEmployeesCsv;
 use App\Models\Employee;
+use App\Models\Upload;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -31,6 +33,8 @@ class EmployeeController extends Controller
         $name = time() . '.' . $file->extension();
         $path = public_path() . '/files';
         $file->move($path, $name);
+        $upload = Upload::create(['filename' => $name]);
+        ProcessEmployeesCsv::dispatch($upload);
         return response()->json([
             'status' => true,
             'data' => $name,

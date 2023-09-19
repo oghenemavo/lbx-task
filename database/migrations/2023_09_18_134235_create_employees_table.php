@@ -13,25 +13,25 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->uuid('employee_id')->unique();
-            $table->string('username')->unique();
-            $table->string('name_prefix');
-            $table->string('first_name');
-            $table->string('middle_name');
-            $table->string('last_name');
-            $table->string('gender');
-            $table->string('email')->unique();
-            $table->string('date_of_birth');
-            $table->string('time_of_birth');
-            $table->decimal('age');
-            $table->string('employment_date');
-            $table->decimal('employment_duration');
-            $table->string('phone_number');
-            $table->string('location');
-            $table->string('county');
-            $table->string('city');
-            $table->string('zip');
-            $table->string('region');
+            $table->string('employee_id')->nullable();
+            $table->string('username')->nullable();
+            $table->string('name_prefix')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('middle_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('email')->nullable();
+            $table->string('date_of_birth')->nullable();
+            $table->string('time_of_birth')->nullable();
+            $table->decimal('age')->default(0);
+            $table->string('employment_date')->nullable();
+            $table->decimal('employment_duration')->default(0);
+            $table->string('phone_number')->nullable();
+            $table->string('location')->nullable();
+            $table->string('county')->nullable();
+            $table->string('city')->nullable();
+            $table->string('zip')->nullable();
+            $table->string('region')->nullable();
             $table->timestamps();
         });
     }

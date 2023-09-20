@@ -10,6 +10,10 @@ Install the dependencies and devDependencies and start the server.
 composer install
 php artisan serve
 ```
+Run Database Migrations
+```sh
+php artisan migrate
+```
 
 Start Background task
 

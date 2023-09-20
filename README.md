@@ -4,6 +4,8 @@
 
 LBX Task requires at least php 8 to run.
 
+This project is powered by the Laravel Framework
+
 Install the dependencies and devDependencies and start the server.
 
 ```sh
